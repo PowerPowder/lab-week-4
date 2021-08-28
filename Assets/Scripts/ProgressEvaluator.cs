@@ -1,4 +1,4 @@
-//#define Pass60
+#define Pass60
 //#define HD90
 
 using System;
@@ -38,6 +38,7 @@ public class ProgressEvaluator : MonoBehaviour
                 evalMethods[i]();
                 if (currentBand <= GradeBand.Pass60)
                 {
+                    Debug.Log(currentBand);
                     EvalPassMessage(currentBand.ToString());
                     if (currentBand > loadedBand)
                         EvalOutput(currentBand);
@@ -74,7 +75,7 @@ public class ProgressEvaluator : MonoBehaviour
     private void Pass60Band()
     {
         // Test: RedPrefab and material
-        string[] prefabFiles = Directory.GetFiles(".\\", "RedPrefab.prefab", SearchOption.AllDirectories);
+        string[] prefabFiles = Directory.GetFiles(".\\Assets", "RedPrefab.prefab", SearchOption.AllDirectories);
         if (prefabFiles.Length == 0)
             throw new EvalFailedException("No red prefab found in the Assets folder.");
         string path = prefabFiles[0]; ;
@@ -90,7 +91,7 @@ public class ProgressEvaluator : MonoBehaviour
 
 
         // Test: BluePrefab and material
-        prefabFiles = Directory.GetFiles(".\\", "BluePrefab.prefab", SearchOption.AllDirectories);
+        prefabFiles = Directory.GetFiles(".\\Assets", "BluePrefab.prefab", SearchOption.AllDirectories);
         if (prefabFiles.Length == 0)
             throw new EvalFailedException("No blue prefab found in the Assets folder.");
         path = prefabFiles[0];
