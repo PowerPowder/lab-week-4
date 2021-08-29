@@ -1,5 +1,5 @@
 #define Pass60
-//#define HD90
+#define HD90
 
 using System;
 using System.Collections;
@@ -187,7 +187,7 @@ public class ProgressEvaluator : MonoBehaviour
     {
 #if (HD90)
         // Test: Check PrintAndHide and Tag of RedPrefab
-        string path = Directory.GetFiles(".\\", "RedPrefab.prefab", SearchOption.AllDirectories)[0];
+        string path = Directory.GetFiles(".\\Assets", "RedPrefab.prefab", SearchOption.AllDirectories)[0];
         GameObject prefabEdit = PrefabUtility.LoadPrefabContents(path);
         PrintAndHide pAndH;
         try
@@ -206,7 +206,7 @@ public class ProgressEvaluator : MonoBehaviour
         }
 
         // Test: Check PrintAndHide and Tag of BluePrefab
-        path = Directory.GetFiles(".\\", "BluePrefab.prefab", SearchOption.AllDirectories)[0];
+        path = Directory.GetFiles(".\\Assets", "BluePrefab.prefab", SearchOption.AllDirectories)[0];
         prefabEdit = PrefabUtility.LoadPrefabContents(path);
         pAndH = null;
         try
