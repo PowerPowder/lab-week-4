@@ -276,7 +276,7 @@ public class ProgressEvaluator : MonoBehaviour
 
     private void HighDist100Band()
     {
-        string[] laContents = Directory.GetFiles(".\\", "PrintAndHide.cs", SearchOption.AllDirectories);
+        string[] laContents = Directory.GetFiles(".\\Assets", "PrintAndHide.cs", SearchOption.AllDirectories);
         if (laContents.Length == 0)
             throw new EvalFailedException("Can't find the LoadAssets.cs script in your Assets folder. " +
                 "You should being this error, let William Raffe know.");
